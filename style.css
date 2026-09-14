@@ -3026,7 +3026,9 @@ figure figcaption {
     margin-top: 15px;
 }
 
-
+.robotic-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
 
 /* Next Project */
 
