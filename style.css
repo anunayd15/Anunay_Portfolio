@@ -2931,8 +2931,7 @@ figure figcaption {
 .results-grid {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 
     margin-bottom: 80px;
@@ -4844,3 +4843,78 @@ figure.prototype-image img {
     height: 80%;
     object-fit: contain;
 }
+
+.resume-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 50px 100px;
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.resume-header h1 {
+    margin: 0;
+
+    font-family: "Sora", sans-serif;
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    color: #48D1CC;
+}
+
+.resume-download-button {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border: 1px solid #9d6cff;
+    border-radius: 8px;
+
+    color: var(--text-main);
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.resume-download-button:hover {
+    background: #9d6cff;
+    color: #09080f;
+}
+
+.resume-preview {
+    width: 100%;
+    height: 1100px;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    border: 1px solid rgba(157, 108, 255, 0.35);
+}
+
+.resume-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 650px) {
+
+    .resume-page {
+        padding: 40px 25px 80px;
+    }
+
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .resume-preview {
+        height: 800px;
+    }
+}
+
