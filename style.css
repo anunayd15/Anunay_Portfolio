@@ -4602,7 +4602,9 @@ figure figcaption {
     .hero-text,
     .case-hero h1,
     .projects-header,
-    .contact h1 {
+    .contact h1,
+    .resume-header h1,
+    .resume-download-button {
         animation: pageFadeUp 0.7s ease both;
     }
 
