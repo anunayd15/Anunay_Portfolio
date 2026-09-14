@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WakeWheel | Anunay Dixit</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body class="project-detail-page">
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="project-nav">
+
+        <a href="../projects.html" class="back-link">
+            ← All Projects
+        </a>
+
+        <a href="../index.html" class="project-home-link">
+            Anunay Dixit
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="case-hero">
+
+
+            <h1>WakeWheel</h1>
+
+
+
+            <!-- Award -->
+
+            <div class="award-banner">
+                ★ Best Overall Project
+            </div>
+
+
+        <div style="height: 50px;"></div>
+
+
+        <div class="case-hero-media">
+
+            <img
+                src="../images/wakewheel/steering_wheel.png"
+                alt="WakeWheel smart steering wheel sleeve"
+                class="wakewheel-hero-image">
+
+        </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             OVERVIEW
+        ========================== -->
+
+        <section class="case-section case-two-column">
+
+            <div class="section-label">
+                OVERVIEW
+            </div>
+
+
+            <div class="section-content">
+
+                <p class="case-lead">
+                    WakeWheel was developed as a steering-wheel-mounted
+                    driver-safety system capable of monitoring heart-rate data
+                    while a vehicle is being operated.
+                </p>
+
+
+                <p>
+                    The system was designed around the idea that changes in a
+                    driver's heart rate could provide an additional indicator
+                    of increasing drowsiness. When the measured signal crossed
+                    defined thresholds, the embedded system could trigger a
+                    physical alert for the driver while transmitting event
+                    data to a connected dashboard.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SYSTEM FLOW
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                HOW IT WORKS
+            </div>
+
+
+
+            <div class="wakewheel-flow">
+
+
+                <div class="flow-card">
+
+                    <p class="flow-number">01</p>
+
+                    <h3>Sense</h3>
+
+                    <p>
+                        A heartbeat sensor embedded into the steering-wheel
+                        sleeve measures the driver's pulse through hand contact.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-card">
+
+                    <p class="flow-number">02</p>
+
+                    <h3>Process</h3>
+
+                    <p>
+                        An ESP32-C3 microcontroller processes incoming
+                        sensor data and evaluates it against the programmed
+                        heart-rate logic.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-card">
+
+                    <p class="flow-number">03</p>
+
+                    <h3>Alert</h3>
+
+                    <p>
+                        When a concerning condition is detected, the system
+                        provides haptic feedback through the steering-wheel
+                        sleeve to regain the driver's attention.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-card">
+
+                    <p class="flow-number">04</p>
+
+                    <h3>Record</h3>
+
+                    <p>
+                        Sensor and event information can be transmitted through
+                        Firebase to a dashboard for monitoring and analysis.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             HARDWARE
+        ========================== -->
+
+        <section class="case-section case-two-column">
+
+            <div class="section-label">
+                HARDWARE
+            </div>
+
+
+            <div class="section-content">
+
+
+                <div class="decision-item">
+
+                    <h3>ESP32-C3 Microcontroller</h3>
+
+                    <p>
+                        The ESP32-C3 served as the embedded controller,
+                        processing sensor readings and supporting communication
+                        between the physical device and the connected software
+                        system.
+                    </p>
+
+                </div>
+
+
+                <div class="decision-item">
+
+                    <h3>Heart-Rate Sensing</h3>
+
+                    <p>
+                        A heartbeat sensor collected physiological data through
+                        contact with the driver's hand on the steering wheel.
+                    </p>
+
+                </div>
+
+
+                <div class="decision-item">
+
+                    <h3>Haptic Feedback</h3>
+
+                    <p>
+                        The sleeve incorporated vibration feedback so an alert
+                        could be delivered physically without requiring the
+                        driver to look away from the road.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONNECTION
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                CONNECTION
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Connecting the sleeve to the dashboard
+                </h2>
+
+            </div>
+
+
+
+            <!-- Simple architecture diagram -->
+
+            <div class="system-architecture">
+
+
+                <div class="architecture-node">
+
+                    <span>INPUT</span>
+
+                    <h3>Heart-Rate Sensor</h3>
+
+                    <p>
+                        Captures pulse data from the driver.
+                    </p>
+
+                </div>
+
+
+                <div class="architecture-line">
+                    →
+                </div>
+
+
+                <div class="architecture-node">
+
+                    <span>PROCESSING</span>
+
+                    <h3>ESP32-C3</h3>
+
+                    <p>
+                        Runs C++ logic and evaluates sensor readings.
+                    </p>
+
+                </div>
+
+
+                <div class="architecture-line">
+                    →
+                </div>
+
+
+                <div class="architecture-node">
+
+                    <span>DATABASE</span>
+
+                    <h3>Firebase</h3>
+
+                    <p>
+                        Transfers and stores relevant system data.
+                    </p>
+
+                </div>
+
+
+                <div class="architecture-line">
+                    →
+                </div>
+
+
+                <div class="architecture-node">
+
+                    <span>INTERFACE</span>
+
+                    <h3>Dashboard</h3>
+
+                    <p>
+                        Displays alerts and driver information.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                DASHBOARD
+            </div>
+
+
+
+            <figure class="dashboard-display">
+
+                <img
+                    src="../images/wakewheel/dashboard.png"
+                    alt="WakeWheel monitoring dashboard">
+
+                <figcaption>
+                    WakeWheel monitoring dashboard
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+
+        <!-- =========================
+             DEMO
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                DEMO
+            </div>
+
+
+
+            <figure class="project-video wakewheel-demo">
+
+                <video controls muted playsinline>
+
+                    <source
+                        src="../videos/wakewheel/WakeWheelDemo.mp4"
+                        type="video/mp4">
+                </video>
+
+                <figcaption>
+                    WakeWheel prototype demonstration
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+
+<!-- =========================
+     OUTCOME
+========================== -->
+
+<section class="case-section outcome-section">
+
+    <div class="section-label">
+        OUTCOME
+    </div>
+
+
+    <div class="outcome-content">
+
+
+        <div class="award-outcome">
+
+            <span>★</span>
+
+            <div>
+
+                <p class="award-small">
+                    RECOGNITION
+                </p>
+
+                <h3>
+                    Best Overall Project
+                </h3>
+
+                <p>
+                    WakeWheel was awarded Best Overall Project by Texas
+                    Convergent when it was presented during the final demo day.
+                </p>
+
+            </div>
+
+        </div>
+
+
+<div class="outcome-text">
+
+    <p>
+        In the end, a successful IoT prototype was developed that integrated
+        heart-rate sensing, embedded control, physical feedback, wireless data
+        communication, and a connected dashboard into a single system. WakeWheel
+        demonstrated how a compact embedded device could connect a physical
+        driver-safety system with a cloud-based monitoring interface, while
+        bringing together hardware, embedded programming, sensor processing,
+        and front-end visualization.
+    </p>
+
+</div>
+
+
+    </div>
+
+</section>
+
+
+
+        <!-- =========================
+             NEXT PROJECT
+        ========================== -->
+
+        <section class="next-project">
+
+            <p class="eyebrow">
+                NEXT PROJECT
+            </p>
+
+            <a href="femto-lab.html">
+                Automated Data Transfer System →
+            </a>
+
+        </section>
+
+
+    </main>
+
+</body>
+
+<footer class="site-footer">
+    © 2026 Anunay Dixit
+</footer>
+
+</html>
+

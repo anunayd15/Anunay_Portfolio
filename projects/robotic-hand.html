@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Morphing Robotic Hand | Anunay Dixit</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body class="project-detail-page">
+
+
+    <!-- =========================
+         PROJECT HEADER
+    ========================== -->
+
+    <header class="project-nav">
+
+        <a href="../projects.html" class="back-link">
+            ← All Projects
+        </a>
+
+        <a href="../index.html" class="project-home-link">
+            Anunay Dixit
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="case-hero">
+
+
+            <h1>Morphing Robotic Hand</h1>
+
+            <!-- <p class="case-subtitle">
+                A modular, reconfigurable robotic hand designed to expand
+                manipulation capability through adaptable grasping,
+                finger reconfiguration, joint locking, and integrated tooling.
+            </p> -->
+
+
+            <div class="case-hero-media">
+
+                <img
+                    src="../images/robotic-hand/full_cad.png"
+                    alt="Morphing robotic hand final prototype"
+                    class="robotic-hand-hero">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROBLEM
+        ========================== -->
+
+        <section class="case-section case-two-column">
+
+            <div class="section-label">
+                WHAT WAS THE PROBLEM?
+            </div>
+
+            <div class="section-content">
+
+                <h2>
+                    Existing robotic end-effectors were too specialized for
+                    flexible manipulation research
+                </h2>
+
+                <p class="case-lead">
+                    The MINIMAX Lab's KUKA robotic arm needed an end-effector
+                    capable of interacting with objects of different sizes,
+                    shapes, and task requirements without requiring frequent
+                    hardware changes.
+                </p>
+
+                <p class="case-lead">
+                    Commercial robotic hands often trade off between grip span,
+                    dexterity, adaptability, mechanical complexity, and cost.
+                    Many systems are optimized around specific tasks, which
+                    limits their flexibility in research environments where
+                    different grasping and manipulation behaviors may need to
+                    be explored using the same platform.
+                </p>
+
+                <p class="case-lead">
+                    The goal was therefore to create a single modular robotic
+                    hand capable of changing its geometry and functionality
+                    while remaining practical to prototype and modify in-house.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             OBJECTIVES
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                PROJECT OBJECTIVES
+            </div>
+
+
+            <div class="objective-grid">
+
+                <div class="objective-card">
+
+                    <h3>Adaptable Grasping</h3>
+
+                    <p>
+                        Grasp objects across a range of sizes, from smaller
+                        objects such as a tennis ball to larger objects such as
+                        a basketball.
+                    </p>
+
+                </div>
+
+
+                <div class="objective-card">
+
+                    <h3>Reconfigurable Geometry</h3>
+
+                    <p>
+                        Rotate and reposition the fingers around the palm to
+                        support different grasp configurations.
+                    </p>
+
+                </div>
+
+
+                <div class="objective-card">
+
+                    <h3>Joint Stiffness</h3>
+
+                    <p>
+                        Mechanically constrain individual finger joints when
+                        greater rigidity is required.
+                    </p>
+
+                </div>
+
+
+                <div class="objective-card">
+
+                    <h3>Tool Interaction</h3>
+
+                    <p>
+                        Integrate a powered tool directly into the hand to
+                        expand functionality beyond object grasping.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             EARLY PROTOTYPES
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                EARLY PROTOTYPES
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Early concepts revealed limitations that shaped the final design
+                </h2>
+
+            </div>
+
+
+            <figure class="prototype-image">
+
+                <img
+                    src="../images/robotic-hand/prototype.png"
+                    alt="Early robotic hand prototype">
+
+                <figcaption>
+                    Early robotic hand prototype
+                </figcaption>
+
+            </figure>
+
+
+            <div class="case-two-column prototype-explanation">
+
+                <div class="section-label">
+                    WHAT DIDN'T WORK?
+                </div>
+
+                <div class="section-content">
+
+                    <div class="decision-item">
+
+                        <h3>Direct actuation added too much complexity</h3>
+
+                        <p>
+                            Early design concepts explored placing actuators
+                            closer to individual finger joints. While this
+                            approach could improve direct control, it increased
+                            finger size, mass, and mechanical complexity. The
+                            addition of actuators at each joint would have definitely
+                            made each finger too bulky. This pushed the design toward
+                            centralized tendon-driven actuation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="decision-item">
+
+                        <h3>Tendon actuation alone did not provide enough stiffness</h3>
+
+                        <p>
+                            Tendon-driven fingers improved adaptability but
+                            introduced compliance. Simply holding motor position
+                            was not sufficient to keep the finger rigid under
+                            external loading, which motivated the addition of
+                            mechanical joint locking using a solenoid.
+                        </p>
+
+                    </div>
+
+
+                    <div class="decision-item">
+
+                        <h3>Manufacturing tests required continuous design iterations</h3>
+
+                        <p>
+                            Early 3D-prints exposed issues that were difficult to fully predict in CAD,
+                            including weak features, interference between mating components, and
+                            insufficient space for hardware and tendon routing. As the system was
+                            assembled, designs were revised to improve clearances, accommodate motors
+                            and tendon paths, and strengthen load-bearing features. Print settings
+                            such as wall count, infill, layer height, and part orientation were also
+                            adjusted to improve component strength and reliability.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SYSTEM DESIGN
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                SYSTEM DESIGN
+            </div>
+
+
+
+            <div class="subsystem-grid">
+
+
+                <!-- Tendon Actuation -->
+
+                <article class="subsystem-card">
+
+                    <div class="subsystem-media">
+
+                        <img
+                            src="../images/robotic-hand/tendon_cad.png"
+                            alt="Tendon driven robotic finger">
+
+                    </div>
+
+                    <div class="subsystem-text">
+
+                        <h3>Tendon-Driven Actuation</h3>
+
+                        <p>
+                            Centralized motors pull tendon lines routed through
+                            the slots inside the finger to create flexion across multiple joints.
+                            This keeps the fingers lighter and slimmer than a
+                            design with motors positioned directly at every
+                            joint.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Finger Rotation -->
+
+                <article class="subsystem-card">
+
+                    <div class="subsystem-media">
+
+                        <img
+                            src="../images/robotic-hand/rotation_mech.png"
+                            alt="Finger rotation gear mechanism">
+
+                    </div>
+
+                    <div class="subsystem-text">
+
+                        <h3>Finger Rotation</h3>
+
+                        <p>
+                            A worm-gear mechanism rotates the fingers around
+                            the palm so the hand can transition between
+                            different grasp configurations. The gearing also
+                            helps maintain finger orientation without requiring
+                            continuous actuator power.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Radial Extension -->
+
+                <article class="subsystem-card">
+
+                    <div class="subsystem-media">
+
+                        <img
+                            src="../images/robotic-hand/radial_extender.png"
+                            alt="Finger radial extension mechanism">
+
+                    </div>
+
+                    <div class="subsystem-text">
+
+                        <h3>Radial Extension</h3>
+
+                        <p>
+                            A linear actuation mechanism changes the radial
+                            position of the finger, expanding the hand's grip
+                            span so it can accommodate objects of significantly
+                            different sizes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Joint Locking -->
+
+                <article class="subsystem-card">
+
+                    <div class="subsystem-media">
+
+                        <img
+                            src="../images/robotic-hand/solenoid_cad.png"
+                            alt="Finger joint locking clutch mechanism">
+
+                    </div>
+
+                    <div class="subsystem-text">
+
+                        <h3>Joint Locking</h3>
+
+                        <p>
+                            A custom solenoid drives a toothed clutch into
+                            engagement at each joint. This allows the finger to
+                            remain compliant during movement and then become
+                            mechanically constrained when greater stiffness is
+                            needed.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Screwdriver -->
+
+        <article class="subsystem-card">
+            <div class="subsystem-media">
+
+                <img
+                    src="../images/robotic-hand/screw_tip.png"
+                    alt="Robotic fingertip screwdriver">
+
+            </div>
+
+            <div class="subsystem-text">
+
+                <h3>Fingertip Screwdriver</h3>
+
+                <p>
+                    A small N20 motor and miniature chuck integrate a
+                    powered screwdriver directly into the fingertip.
+                    Embedding the tool avoids the need for the hand to
+                    grasp and manipulate an external screwdriver.
+                </p>
+
+            </div>
+
+        </article>
+        <!-- Electronics -->
+
+        <article class="subsystem-card">
+
+            <div class="subsystem-media">
+
+                <img
+                    src="../images/robotic-hand/electronics_diagram.jpg"
+                    alt="Robotic hand electronics and motor control diagram">
+
+            </div>
+
+            <div class="subsystem-text">
+
+                <h3>Electronics & Control</h3>
+
+                <p>
+                    An Arduino Mega coordinates the hand's motors through
+                    multiple motor drivers, while encoder feedback provides
+                    position information from the actuators. The electronics
+                    architecture allows the mechanical subsystems to be
+                    controlled together as a single integrated system.
+                </p>
+
+            </div>
+
+        </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             MANUFACTURING
+        ========================== -->
+
+        <!-- <section class="case-section">
+
+            <div class="section-label">
+                MANUFACTURING
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Additive manufacturing enabled rapid refinement of complex geometry.
+                </h2>
+
+                <p>
+                    Most custom mechanical components were produced using 3D
+                    printing, allowing the hand to be repeatedly adjusted as
+                    fit, strength, and mechanism behavior were evaluated.
+                </p>
+
+            </div>
+
+
+            <div class="image-pair">
+
+                <figure>
+
+                    <img
+                        src="../images/robotic-hand/manufacturing-1.jpg"
+                        alt="3D printed robotic hand components">
+
+                    <figcaption>
+                        3D printed subsystem components.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="../images/robotic-hand/manufacturing-2.jpg"
+                        alt="Robotic hand component assembly">
+
+                    <figcaption>
+                        Assembly and integration of manufactured components.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+
+            <p class="wide-body-text">
+                Print orientation, wall count, layer height, filament choice,
+                infill, and printer tolerances directly affected component
+                strength and mechanism reliability. These considerations were
+                especially important for parts such as the clutch teeth and
+                other tightly mating components.
+            </p>
+
+        </section> -->
+
+
+
+        <!-- =========================
+             VIDEOS / MECHANISMS
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                MECHANISMS IN ACTION
+            </div>
+
+            <div class="section-heading">
+
+                <h2>See the system move</h2>
+
+            </div>
+
+
+
+            <div class="video-grid">
+
+
+                <figure class="project-video">
+
+                    <img
+                        src="../videos/robotic-hand/tendon_actuation.gif"
+                        alt="Tendon-driven finger flexion"
+                        class="project-gif-right">
+
+                    <figcaption>
+                        Tendon-driven finger flexion
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="project-video">
+
+                    <img
+                        src="../videos/robotic-hand/finger_rotation.gif"
+                        alt="Finger rotation around the palm"
+                        class="project-gif-top">
+
+                    <figcaption>
+                        Finger rotation around the palm
+                    </figcaption>
+
+                </figure>
+
+
+                <figure class="project-video">
+
+                    <img
+                        src="../videos/robotic-hand/finger_extension.gif"
+                        alt="Radial finger extension"
+                        class="project-gif-right">
+
+                    <figcaption>
+                        Radial finger extension
+                    </figcaption>
+
+                </figure>
+
+
+
+                <figure class="project-video">
+
+                    <img
+                        src="../videos/robotic-hand/tool_usage.gif"
+                        alt="Tool usage demonstration"
+                        class="project-gif-top">
+
+                    <figcaption>
+                        Tool usage demonstration
+                    </figcaption>
+
+                </figure>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             RESULTS
+        ========================== -->
+
+        <section class="case-section results-section">
+
+            <div class="section-label">
+                TECHNICAL RESULTS
+            </div>
+
+
+
+            <div class="results-grid">
+
+
+                <div class="result-card">
+
+                    <p class="result-number">60°+</p>
+
+                    <p class="result-description">
+                        finger rotation around the palm
+                    </p>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <p class="result-number">2.25 in</p>
+
+                    <p class="result-description">
+                        approximately achievable radial extension
+                    </p>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <p class="result-number">3 joints</p>
+
+                    <p class="result-description">
+                        mechanically lockable within each finger
+                    </p>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <p class="result-number">Multi-DOF</p>
+
+                    <p class="result-description">
+                        coordinated system motion demonstrated
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="image-pair final-grasp-images">
+
+                <figure>
+
+                    <img
+                        src="../images/robotic-hand/holding_bball.jpg"
+                        alt="Robotic hand grasping basketball">
+
+                    <figcaption>
+                        Large-object grasp demonstration.
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="../images/robotic-hand/holding_tennis.png"
+                        alt="Robotic hand grasping tennis ball"
+                        style="object-position: 30% 20%;">
+
+                    <figcaption>
+                        Small-object grasp demonstration.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             OUTCOME
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                OUTCOME
+            </div>
+
+
+            <div class="section-content centered-text">
+                <h2>
+                    A functional proof of concept for reconfigurable robotic manipulation
+                </h2>
+            </div>
+
+            <div class="section-content centered-text-left-indent">
+
+                <p class="case-lead">
+                    The final prototype demonstrated grasping across different
+                    object sizes, multi-degree-of-freedom reconfiguration,
+                    mechanical joint locking, and integrated tool operation.
+                </p>
+
+                <p class="case-lead">
+                    The completed system showed that a modular robotic hand
+                    could combine adaptable grasping and multiple mechanical
+                    functions using relatively simple actuators and manufactured
+                    components.
+                </p>
+
+                <p class="case-lead">
+                    The final prototype also provided the MINIMAX Lab with a
+                    proof-of-concept robotic hand that can serve as a foundation
+                    for continued development to conduct future experimentations
+                    on their KUKA robotic arm.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEXT PROJECT
+        ========================== -->
+
+        <section class="next-project">
+
+            <p class="eyebrow">
+                NEXT PROJECT
+            </p>
+
+            <a href="rc-vehicle.html">
+                Custom-Built RC Vehicle →
+            </a>
+
+        </section>
+
+
+    </main>
+
+</body>
+<footer class="site-footer">
+    © 2026 Anunay Dixit
+</footer>
+</html>

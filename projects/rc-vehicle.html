@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom-Built RC Vehicle | Anunay Dixit</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body class="project-detail-page">
+
+
+    <!-- =========================
+         PROJECT HEADER
+    ========================== -->
+
+    <header class="project-nav">
+
+        <a href="../projects.html" class="back-link">
+            ← All Projects
+        </a>
+
+        <a href="../index.html" class="project-home-link">
+            Anunay Dixit
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+<section class="case-hero">
+
+    <h1>Custom-Built RC Vehicle</h1>
+
+    <div style="height: 100px;"></div>
+
+    <div class="case-hero-media">
+
+        <img
+            src="../images/rc-car/rc_cad.png"
+            alt="CAD model of custom-built RC vehicle"
+            class="rc-cad-image">
+
+    </div>
+
+</section>
+
+
+
+        <!-- =========================
+             OVERVIEW
+        ========================== -->
+
+        <section class="case-section case-two-column">
+
+            <div class="section-label">
+                OVERVIEW
+            </div>
+
+            <div class="section-content">
+
+                <h2>
+                    Designing a fully functional RC vehicle from individual mechanical
+                    and electrical subsystems
+                </h2>
+
+                <p class="case-lead">
+                    The goal was to design, fabricate, and integrate a
+                    functional remote-controlled vehicle while balancing
+                    vehicle size, weight, steering performance, drivetrain
+                    efficiency, and manufacturability.
+                </p>
+
+                <p class="case-lead">
+                    The vehicle was developed around a four-wheel layout with
+                    a 9-inch wheelbase and 6-inch track width. The final design
+                    incorporated a belt-driven drivetrain, servo-actuated
+                    Ackermann steering, a custom chassis, and onboard
+                    electronics into a compact platform.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             VEHICLE ARCHITECTURE
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                VEHICLE ARCHITECTURE
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    What were the four primary systems?
+                </h2>
+
+            </div>
+
+
+
+            <div class="decision-item">
+
+    <h3>Chassis</h3>
+
+    <p>
+        The chassis was developed around a lightweight laser cut wood structure
+        that could support the drivetrain, steering system, electronics,
+        and wheel assemblies. The chassis
+        geometry was laid out around the vehicle's 9-inch wheelbase and
+        6-inch track width, then fabricated and
+        assembled everything together using screws.
+    </p>
+
+</div>
+
+
+<div class="decision-item">
+
+    <h3>Belt Drivetrain</h3>
+
+    <p>
+        The drivetrain used a belt transmission to transfer power from the
+        rear-mounted motor to the driven axle. A final gear ratio of approximately
+        2.83:1 was calculated to meet the vehicle's target acceleration while
+        maintaining sufficient vehicle speed. During fabrication, the rear axle was
+        connected to the belt transmission using epoxy because the purchased components did not
+        provide a direct mechanical fastening interface. The connection
+        functioned during testing, but later became a structural weak point
+        after an impact, highlighting the need for a stronger fastened axle connection.
+    </p>
+
+</div>
+
+
+<div class="decision-item">
+
+    <h3>Ackermann Steering</h3>
+
+    <p>
+        The steering system was designed around Ackermann geometry so the
+        inner and outer front wheels could follow different turning radii
+        during cornering. A servo actuated a multi-bar linkage that transferred
+        motion to the front wheels. The custom steering components and wheel
+        interfaces were developed through SolidWorks and manufactured using 3D printing,
+        allowing the linkage geometry and component fit to be adjusted during
+        assembly.
+    </p>
+
+</div>
+
+
+<div class="decision-item">
+
+    <h3>Electronics & Control</h3>
+
+    <p>
+        The electrical system combined a brushed drive motor, steering servo,
+        electronic speed controller, 7.2 V battery, and wireless
+        transmitter/receiver to provide throttle and steering
+        control. The components were arranged within the limited chassis space
+        while maintaining access to the mechanical systems for assembly and
+        troubleshooting. This allowed the drivetrain and steering subsystems
+        to be controlled together as a complete RC vehicle.
+    </p>
+
+</div>
+
+        </section>
+
+
+
+        <!-- =========================
+             VEHICLE IN ACTION
+        ========================== -->
+
+        <!-- <section class="case-section">
+
+            <div class="section-label">
+                VEHICLE IN ACTION
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    See the completed vehicle run
+                </h2>
+
+            </div>
+
+
+            <div class="wakewheel-demo">
+
+                <video controls muted loop playsinline>
+
+                    <source
+                        src="../videos/rc-vehicle/vehicle-demo.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video playback.
+
+                </video>
+
+            </div>
+
+        </section> -->
+
+
+
+        <!-- =========================
+             TECHNICAL RESULTS
+        ========================== -->
+
+        <section class="case-section results-section">
+
+            <div class="section-label">
+                TECHNICAL RESULTS
+            </div>
+
+
+
+
+            <div class="results-grid">
+
+
+                <div class="result-card">
+
+                    <p class="result-title">
+                        Average Speed
+                    </p>
+
+                    <p class="result-number">
+                        6.4 m/s
+                    </p>
+
+                    <p class="result-description">
+                        measured during acceleration testing
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <p class="result-title">
+                        Turning Radius
+                    </p>
+
+                    <p class="result-number">
+                        ~10 in
+                    </p>
+
+                    <p class="result-description">
+                        measured vehicle turning radius
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <p class="result-title">
+                        Gear Ratio
+                    </p>
+
+                    <p class="result-number">
+                        2.83:1
+                    </p>
+
+                    <p class="result-description">
+                        final belt drivetrain ratio
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <p class="result-title">
+                        Vehicle Mass
+                    </p>
+
+                    <p class="result-number">
+                        ~3 kg
+                    </p>
+
+                    <p class="result-description">
+                        approximate final vehicle mass
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card result-card-center-start">
+
+                    <p class="result-title">
+                        Ground Clearance
+                    </p>
+
+                    <p class="result-number">
+                        0.6 in
+                    </p>
+
+                    <p class="result-description">
+                        final ground clearance
+                    </p>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <p class="result-title">
+                        Wheelbase
+                    </p>
+
+                    <p class="result-number">
+                        9 in
+                    </p>
+
+                    <p class="result-description">
+                        front-to-rear axle spacing
+                    </p>
+
+                </div>
+
+
+            </div>
+            <figure class="completed-rc-image">
+
+    <img
+        src="../images/rc-car/full_rc.jpg"
+        alt="Completed custom-built RC vehicle">
+
+    <figcaption>
+        Completed and fully assembled RC vehicle
+    </figcaption>
+
+</figure>
+
+        </section>
+
+
+
+        <!-- =========================
+             OUTCOME
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                OUTCOME
+            </div>
+
+
+            <div class="section-content centered-text">
+
+                <h2>
+                    Integrating the individual systems into a functional vehicle
+                </h2>
+            </div>
+
+
+            <div class="section-content centered-text-left-indent">
+
+                <p class="case-lead">
+                    The completed RC vehicle successfully brought the chassis,
+                    drivetrain, steering system, electronics, and controls
+                    together into a single functional platform.
+                </p>
+
+                <p class="case-lead">
+                    Testing also exposed several areas where the physical
+                    vehicle behaved differently than expected from the initial
+                    design. One of the primary issues occurred at the
+                    axle-transmission connection, which became a structural
+                    weak point after impact.
+                </p>
+
+                <p class="case-lead">
+                    Epoxy was used to reinforce the connection and provide
+                    additional structural support, allowing the drivetrain to
+                    remain integrated with the vehicle. Through these
+                    adjustments and final system integration, the vehicle was
+                    able to successfully drive, steer, and demonstrate the
+                    intended overall functionality.
+                </p>
+
+                <p class="case-lead">
+                    The project provided hands-on experience taking a vehicle
+                    from initial mechanical layout through fabrication,
+                    integration, troubleshooting, and physical performance
+                    testing.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEXT PROJECT
+        ========================== -->
+
+        <section class="next-project">
+
+            <p class="eyebrow">
+                NEXT PROJECT
+            </p>
+
+            <a href="wakewheel.html">
+                WakeWheel →
+            </a>
+
+        </section>
+
+
+    </main>
+
+</body>
+<footer class="site-footer">
+    © 2026 Anunay Dixit
+</footer>
+</html>

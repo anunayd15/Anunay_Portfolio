@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Automated Data Transfer System | Anunay Dixit</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+<body class="project-detail-page">
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="project-nav">
+
+        <a href="../projects.html" class="back-link">
+            ← All Projects
+        </a>
+
+        <a href="../index.html" class="project-home-link">
+            Anunay Dixit
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="case-hero">
+
+            <!-- <p class="eyebrow">
+                PYTHON · AUTOMATION · API DEVELOPMENT
+            </p> -->
+
+            <h1>Automated Data Transfer System</h1>
+
+            <p class="case-subtitle">
+                A Python-based workflow for transferring local files to a
+                remote cloud
+            </p>
+
+
+        <div class="hero-process">
+
+            <p class="hero-process-label">HOW IT WORKS</p>
+
+            <div class="automation-hero">
+
+                <div class="automation-hero-node">
+                    <span>01</span>
+                    <h3>Local Lab Data</h3>
+                    <p>Experimental files generated and stored locally.</p>
+                </div>
+
+                <div class="automation-hero-arrow">→</div>
+
+                <div class="automation-hero-node">
+                    <span>02</span>
+                    <h3>File Selection</h3>
+                    <p>Python identifies the files selected for transfer.</p>
+                </div>
+
+                <div class="automation-hero-arrow">→</div>
+
+                <div class="automation-hero-node">
+                    <span>03</span>
+                    <h3>Automated Transfer</h3>
+                    <p>The transfer workflow processes and uploads the files.</p>
+                </div>
+
+                <div class="automation-hero-arrow">→</div>
+
+                <div class="automation-hero-node">
+                    <span>04</span>
+                    <h3>Cloud Storage</h3>
+                    <p>Files are transferred to UT Box for remote storage.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             OVERVIEW
+        ========================== -->
+
+<section class="case-section case-two-column">
+
+    <div class="section-label">
+        OVERVIEW
+    </div>
+
+    <div class="section-content">
+
+        <h2>
+            Automating the transfer of locally generated lab data
+            to cloud storage
+        </h2>
+
+        <p class="case-lead">
+            This project began in the Femto Lab at The University of Texas
+            at Austin as an effort to automate and simplify the process of
+            transferring locally generated laboratory data to cloud storage.
+        </p>
+
+        <p class="case-lead">
+            Rather than manually identifying and uploading files, I explored
+            Python-based workflows that could select files based on user-defined
+            patterns and automate their transfer from a local computer to
+            UT Box.
+        </p>
+
+        <p class="case-lead">
+            I developed two approaches to the problem: a direct synchronization
+            method and a client/server method using a Flask API.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+        <!-- =========================
+             THE THREE PROGRAMS
+        ========================== -->
+
+<section class="case-section">
+
+    <div class="section-label">
+        TWO METHODS
+    </div>
+
+    <div class="section-heading">
+
+        <h2>
+            Exploring two approaches to automate the same workflow
+        </h2>
+
+    </div>
+
+
+    <div class="method-grid">
+
+
+        <!-- Method 1 -->
+
+        <article class="method-card">
+
+            <div class="method-number">01</div>
+
+            <p class="method-type">DIRECT METHOD</p>
+
+            <h3>Direct Synchronization</h3>
+
+            <p>
+                A standalone Python script identifies files matching a
+                user-defined pattern, checks which files already exist in
+                remote storage, and uploads only the missing files.
+            </p>
+
+            <div class="method-file">
+                dataToBox.py
+            </div>
+
+        </article>
+
+
+        <!-- Method 2 -->
+
+        <article class="method-card">
+
+            <div class="method-number">02</div>
+
+            <p class="method-type">CLIENT / SERVER METHOD</p>
+
+            <h3>API-Based Transfer</h3>
+
+            <p>
+                A client program identifies and sends selected files through
+                an HTTP request to a Flask server, which handles the underlying
+                transfer to remote storage.
+            </p>
+
+            <div class="method-file">
+                API_requests.py + app.py
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+        <!-- =========================
+             DIRECT APPROACH
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                DIRECT APPROACH
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Compare first then upload only what's missing
+                </h2>
+
+                <p>
+                    The direct synchronization script was designed to reduce
+                    unnecessary file transfers by checking the contents of
+                    remote storage before uploading.
+                </p>
+
+            </div>
+
+
+
+            <div class="data-flow vertical-flow">
+
+                <div class="data-flow-node">
+
+                    <span>STEP 1</span>
+
+                    <h3>Enter File Pattern</h3>
+
+                    <p>
+                        A command-line argument specifies which files should
+                        be considered for transfer.
+                    </p>
+
+                    <code>python dataToBox.py "*.jpg"</code>
+
+                </div>
+
+
+                <div class="vertical-arrow">↓</div>
+
+
+                <div class="data-flow-node">
+
+                    <span>STEP 2</span>
+
+                    <h3>Mirror Remote Directory</h3>
+
+                    <p>
+                        The remote Box directory is temporarily mirrored
+                        locally so its contents can be inspected.
+                    </p>
+
+                </div>
+
+
+                <div class="vertical-arrow">↓</div>
+
+
+                <div class="data-flow-node">
+
+                    <span>STEP 3</span>
+
+                    <h3>Compare Filenames</h3>
+
+                    <p>
+                        Python compares the names of matching local files
+                        against files already present in the mirrored
+                        remote directory.
+                    </p>
+
+                </div>
+
+
+                <div class="vertical-arrow">↓</div>
+
+
+                <div class="data-flow-node">
+
+                    <span>STEP 4</span>
+
+                    <h3>Upload Missing Files</h3>
+
+                    <p>
+                        Files whose names are not already present are
+                        transferred to the remote directory using lftp.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             API APPROACH
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                API APPROACH
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Separating the client from the file-transfer process
+                </h2>
+
+                <p>
+                    The second implementation introduced a Flask API between
+                    the program selecting the files and the process responsible
+                    for transferring them to remote storage.
+                </p>
+
+            </div>
+
+
+
+            <div class="api-flow">
+
+
+                <div class="api-node">
+
+                    <span>CLIENT</span>
+
+                    <h3>API_requests.py</h3>
+
+                    <p>
+                        Finds matching files and initiates the upload.
+                    </p>
+
+                </div>
+
+
+                <div class="api-connection">
+
+                    <span>HTTP POST</span>
+
+                    <div>→</div>
+
+                </div>
+
+
+                <div class="api-node">
+
+                    <span>SERVER</span>
+
+                    <h3>app.py</h3>
+
+                    <p>
+                        Flask receives and saves the uploaded files.
+                    </p>
+
+                </div>
+
+
+                <div class="api-connection">
+
+                    <span>lftp</span>
+
+                    <div>→</div>
+
+                </div>
+
+
+                <div class="api-node">
+
+                    <span>STORAGE</span>
+
+                    <h3>UT Box</h3>
+
+                    <p>
+                        Files are transferred into remote storage.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CODE WALKTHROUGH
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                IMPLEMENTATION
+            </div>
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Connecting the programs with an HTTP request
+                </h2>
+
+                <p>
+                    The API-based implementation allows the client to request
+                    an upload through a GUI without containing the remote-storage logic
+                    itself and relying on a command-line.
+                </p>
+
+            </div>
+
+
+
+            <div class="code-explanation-grid">
+
+
+                <div class="code-explanation">
+
+                    <p class="code-label">
+                        CLIENT
+                    </p>
+
+                    <h3>Send the files</h3>
+
+                    <pre><code>response = requests.post(
+    SERVER_URL,
+    files=files
+)</code></pre>
+
+                    <p>
+                        The client packages the selected images and sends them
+                        to the Flask server using an HTTP POST request.
+                    </p>
+
+                </div>
+
+
+
+                <div class="code-explanation">
+
+                    <p class="code-label">
+                        SERVER
+                    </p>
+
+                    <h3>Receive the files</h3>
+
+                    <pre><code>files = request.files.getlist(
+    "images"
+)</code></pre>
+
+                    <p>
+                        Flask receives the uploaded files through the
+                        <code>/api_upload_to_box</code> endpoint.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             WHY AN API?
+        ========================== -->
+
+        <section class="case-section case-two-column">
+
+            <div class="section-label">
+                ARCHITECTURE
+            </div>
+
+
+            <div class="section-content">
+
+                <h2>
+                    Why separate the system into a client and server?
+                </h2>
+
+                <p class="case-lead">
+                    The API approach separates the request to upload files
+                    from the implementation responsible for interacting with
+                    remote storage.
+                </p>
+
+
+                <div class="decision-item">
+
+                    <h3>Client Responsibility</h3>
+
+                    <p>
+                        The client only needs to identify the desired files
+                        and send them to a defined API endpoint. Furthermore,
+                        the client has the ability to go through their file explorer
+                        and select files manually, rather than relying on a command-line.
+                    </p>
+
+                </div>
+
+
+                <div class="decision-item">
+
+                    <h3>Server Responsibility</h3>
+
+                    <p>
+                        The Flask application handles receiving the files,
+                        saving them locally, executing the transfer command,
+                        and returning a success or error response.
+                    </p>
+
+                </div>
+
+
+                <div class="decision-item">
+
+                    <h3>Why This Matters</h3>
+
+                    <p>
+                        Separating these responsibilities creates a cleaner
+                        interface between file-generating applications and the
+                        remote-storage workflow. A client can request an upload
+                        without needing to implement the underlying Box transfer
+                        process itself while having the ability to select files
+                        through a GUI rather than a command-line.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             OUTCOME
+        ========================== -->
+
+        <section class="case-section">
+
+            <div class="section-label">
+                OUTCOME
+            </div>
+
+
+            <div class="section-content centered-text">
+
+                <h2>
+                    Turning a repetitive file-management task into an
+                    automated workflow
+                </h2>
+            <div>
+            <div class="section-content centered-text-left-indent">
+                <p class="case-lead">
+                    The project explored how Python automation and a simple API
+                    architecture could reduce the manual effort required to
+                    move locally generated files into shared remote storage.
+                </p>
+
+                <p class="case-lead">
+                    The direct implementation focused on identifying and
+                    transferring missing files, while the API implementation
+                    separated file selection from the underlying upload
+                    process.
+                </p>
+
+                <p class="case-lead">
+                    For a laboratory workflow, this architecture could be used
+                    to automate the transfer of generated experimental images
+                    from a local acquisition computer into a shared cloud storage.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEXT PROJECT
+        ========================== -->
+
+        <section class="next-project">
+
+            <!-- <p class="eyebrow">
+                NEXT PROJECT
+            </p> -->
+
+            <a href="../projects.html">
+                View All Projects →
+            </a>
+
+        </section>
+
+
+    </main>
+
+</body>
+<footer class="site-footer">
+    © 2026 Anunay Dixit
+</footer>
+</html>
